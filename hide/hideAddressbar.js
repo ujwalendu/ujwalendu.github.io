@@ -32,7 +32,9 @@
         // We don't go further if we are
         // not on an ios or android device
         // or the passed element was not found
-        if (!(ios || android) || !elem) return;
+        if (!(ios || android) || !elem) {
+            return;
+        }
 
         if (android) {
 
