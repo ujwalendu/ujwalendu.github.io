@@ -13,6 +13,19 @@
     <link rel="apple-touch-icon" href="./apple-touch-icon.png">
     <link rel="apple-touch-startup-image" href="./startup.png">
 
+    <style type="text/css">
+        #statusbar{
+            background: red;
+            width:100%;
+            position: fixed;
+            top:0;
+            opacity: 0.95;
+            z-index: 1030;
+        }
+        .navbar {
+            margin-top: 15pt;
+        }
+    </style>
     <script>
         document.addEventListener('deviceready', onDeviceReady, false);
 
@@ -43,8 +56,8 @@
 </head>
 
 <body ng-app="todoApp" ontouchmove="BlockMove(event);">
-
-<div class="container" ng-controller="todoCtrl">
+<div id=statusbar"></div>
+<div class="container"  ng-controller="todoCtrl">
 
     <div class="row" ng-repeat="todo in todoList">
         <div class="col-md-4">
