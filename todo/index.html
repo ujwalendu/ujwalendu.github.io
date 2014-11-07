@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html manifest="cache.manifest">
+<head>
+    <meta name="viewport" content="width=device-width, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+    <title>TODO Tasks | Manage Your Tasks Easily</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="css/main.css">
+
+    <link rel="apple-touch-icon" href="./apple-touch-icon.png">
+    <link rel="apple-touch-startup-image" href="./startup.png">
+
+    <script>
+        document.addEventListener('deviceready', onDeviceReady, false);
+
+        window.onload = function () {
+            if(! window.device)
+                onDeviceReady()
+        }
+        function onDeviceReady() {
+            //alert("device ready");
+            StatusBar.overlaysWebView(false);
+            StatusBar.backgroundColorByName('darkolivegreen');
+        }
+
+        function BlockMove(event) {
+            event.preventDefault() ;
+        }
+    </script>
+
+    <script type="text/javascript" charset="utf-8" async defer>
+        if (window.applicationCache) {
+            applicationCache.addEventListener('updateready', function() {
+                if (confirm('An update is available. Reload now?')) {
+                    window.location.reload();
+                }
+            });
+        }
+    </script>
+</head>
+
+<body ng-app="todoApp" ontouchmove="BlockMove(event);">
+
+<div class="container" ng-controller="todoCtrl">
+
+    <div class="row" ng-repeat="todo in todoList">
+        <div class="col-md-4">
+            {{todo.name}}
+        </div>
+    </div>
+</div>
+
+<script src="js/jquery-2.1.1.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<!-- https://code.angularjs.org/1.3.1/ -->
+<script src="js/angular-1.3.1.min.js"></script>
+<script src="js/main.js"></script>
+
+</body>
+</html>
