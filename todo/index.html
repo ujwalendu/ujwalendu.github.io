@@ -2,10 +2,13 @@
 <html manifest="cache.manifest">
 <head>
     <meta name="viewport" content="width=device-width, user-scalable=no">
+
     <meta name="apple-mobile-web-app-capable" content="yes">
+
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 
     <title>TODO Tasks | Manage Your Tasks Easily</title>
+
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/bootstrap-theme.min.css">
     <link rel="stylesheet" href="css/main.css">
@@ -13,19 +16,6 @@
     <link rel="apple-touch-icon" href="./apple-touch-icon.png">
     <link rel="apple-touch-startup-image" href="./startup.png">
 
-    <style type="text/css">
-        #statusbar{
-            background: red;
-            width:100%;
-            position: fixed;
-            top:0;
-            opacity: 0.95;
-            z-index: 1030;
-        }
-        .navbar {
-            margin-top: 15pt;
-        }
-    </style>
     <script>
         document.addEventListener('deviceready', onDeviceReady, false);
 
@@ -33,15 +23,9 @@
             if(! window.device)
                 onDeviceReady()
         }
-        function onDeviceReady() {
-            //alert("device ready");
-            StatusBar.overlaysWebView(false);
-            StatusBar.backgroundColorByName('darkolivegreen');
-        }
 
-        function BlockMove(event) {
-            event.preventDefault() ;
-        }
+        function onDeviceReady() {}
+
     </script>
 
     <script type="text/javascript" charset="utf-8" async defer>
@@ -55,10 +39,9 @@
     </script>
 </head>
 
-<body ng-app="todoApp" ontouchmove="BlockMove(event);">
-<div id=statusbar"></div>
-<div class="container"  ng-controller="todoCtrl">
+<body ng-app="todoApp">
 
+<div class="container"  ng-controller="todoCtrl">
     <div class="row" ng-repeat="todo in todoList">
         <div class="col-md-4">
             {{todo.name}}
