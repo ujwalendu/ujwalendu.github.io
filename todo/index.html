@@ -49,8 +49,9 @@
 
 <div class="container"  ng-controller="todoCtrl">
     <div class="row" ng-repeat="todo in todoList">
-
-            {{todo.name}}
+        <div class="col-xs-9">
+            <input type="checkbox" class="form-control form-inline"> {{todo.todoText}}
+        </div>
         <hr>
     </div>
     <div class="row">
