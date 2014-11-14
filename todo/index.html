@@ -54,8 +54,12 @@
         <hr>
     </div>
     <div class="row">
-        <input type="text" class="form-control" placeholder="Add TODO">
-        <a class="btn btn-primary">Add</a>
+        <div class="col-sm-9">
+            <input type="text" class="form-control" placeholder="Add TODO">
+        </div>
+        <div class="col-sm-3">
+            <a class="btn btn-primary" ng-click="addTodo()" ng-model="todoText">Add</a>
+        </div>
     </div>
 </div>
 
