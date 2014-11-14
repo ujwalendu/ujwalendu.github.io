@@ -7,15 +7,12 @@ var todoApp = angular.module('todoApp', []);
 todoApp.controller('todoCtrl', ['$scope', function($scope){
 
 
-    if(window.localStorage){
-
         if(typeof localStorage.getItem("todoItems") === "undefined") {
             $scope.todoList = [];
         } else {
 
             $scope.todoList = localStorage.getItem("todoItems");
         }
-    }
 
     $scope.addTodo = function() {
 
