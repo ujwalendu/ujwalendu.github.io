@@ -6,20 +6,16 @@ var todoApp = angular.module('todoApp', []);
 
 todoApp.controller('todoCtrl', ['$scope', function($scope){
 
-    $scope.todoList = [
 
-        {
-            "name": "task1",
-            "completed": "no"
-        },
-        {
-            "name": "task2",
-            "completed": "yes"
-        },
-        {
-            "name": "task8",
-            "completed": "yes"
+    if(window.localStorage){
+
+        if(typeof localStorage.uprakash_todoItems === "undefined") {
+            $scope.todoList = [];
+        } else {
+
+            $scope.todoList = localStorage.uprakash_todoItems;
         }
-    ];
+    }
+
 
 }]);

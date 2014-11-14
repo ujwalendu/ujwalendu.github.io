@@ -40,18 +40,6 @@
             e.preventDefault();
         }
 
-        var updateLayout = function() {
-            if (window.innerWidth != currentWidth) {
-                currentWidth = window.innerWidth;
-                var orient = (currentWidth == 320) ? "profile" : "landscape";
-                document.body.setAttribute("orient", orient);
-                window.scrollTo(0, 1);
-            }
-        };
-
-        iPhone.DomLoad(updateLayout);
-        setInterval(updateLayout, 500);
-
     </script>
 </head>
 
@@ -61,9 +49,13 @@
 
 <div class="container"  ng-controller="todoCtrl">
     <div class="row" ng-repeat="todo in todoList">
-        <div class="col-md-4">
+
             {{todo.name}}
-        </div>
+        <hr>
+    </div>
+    <div class="row">
+        <input type="text" class="form-control" placeholder="Add TODO">
+        <a class="btn btn-primary">Add</a>
     </div>
 </div>
 
