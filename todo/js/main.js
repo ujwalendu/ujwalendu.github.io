@@ -6,10 +6,10 @@ var todoApp = angular.module('todoApp', []);
 
 todoApp.controller('todoCtrl', ['$scope', function($scope){
 
-    $scope.todoList = [];
+    $scope.todoList = [{}];
 
     if(typeof localStorage.getItem("todoItems") === "undefined") {
-        $scope.todoList = [];
+        $scope.todoList = [{}];
     } else {
 
         $scope.todoList = JSON.parse(localStorage.getItem("todoItems"));
@@ -39,6 +39,7 @@ todoApp.controller('todoCtrl', ['$scope', function($scope){
         console.log(todoItem);
 
         console.log($scope);
+
         $scope.todoList.push(todoItem);
 
         console.log($scope.todoList);
