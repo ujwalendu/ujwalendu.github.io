@@ -11,7 +11,7 @@ todoApp.controller('todoCtrl', ['$scope', function($scope){
             $scope.todoList = [];
         } else {
 
-            $scope.todoList = localStorage.getItem("todoItems");
+            $scope.todoList = JSON.parse(localStorage.getItem("todoItems"));
         }
 
     $scope.addTodo = function() {
@@ -34,7 +34,7 @@ todoApp.controller('todoCtrl', ['$scope', function($scope){
         var todoTime = today;
 
         $scope.todoList.push({'todoText':todoText, 'todoTime':todoTime});
-        localStorage.setItem("todoItems", $scope.todoList);
+        localStorage.setItem("todoItems", JSON.stringify($scope.todoList));
     }
 
 }]);
