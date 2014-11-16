@@ -36,7 +36,7 @@ todoApp.controller('todoCtrl', ['$scope', function($scope){
 
         var todoItem = {"todoText": todoText, "todoTime": todoTime};
         console.log(todoItem);
-        $scope.todoList.push({'todoText':todoText, 'todoTime':todoTime});
+        $scope.todoList.push(todoItem);
 
         console.log($scope.todoList);
         localStorage.setItem("todoItems", JSON.stringify($scope.todoList));
