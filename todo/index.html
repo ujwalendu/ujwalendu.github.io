@@ -48,20 +48,23 @@
 <div id="statusbar" style="margin-top: 25px;"></div>
 
 <div class="container"  ng-controller="todoCtrl">
+
     <div class="row" ng-repeat="todo in todoList">
         <div class="col-xs-9">
             <input type="checkbox" class="form-control form-inline"> {{todo.todoText}}
         </div>
         <hr>
     </div>
+
     <div class="row">
         <div class="col-xs-9">
-            <input type="text" class="form-control" placeholder="Add TODO">
+            <input type="text" class="form-control" placeholder="Add TODO" ng-model="todoText">
         </div>
         <div class="col-xs-3">
-            <a class="btn btn-primary" ng-click="addTodo()" ng-model="todoText">Add</a>
+            <a class="btn btn-primary" ng-click="addTodo()">Add</a>
         </div>
     </div>
+
 </div>
 
 <script src="js/jquery-2.1.1.min.js"></script>
